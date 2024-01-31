@@ -1,0 +1,41 @@
+
+<div>
+    <h2>Employee List</h2>
+  
+    <ul>
+      <li *ngFor="let employee of employees">
+        {{ employee.name }} - {{ employee.email }} - {{ employee.branch?.name }}
+      </li>
+    </ul>
+  
+    <h3>Add New Employee</h3>
+    <form (ngSubmit)="addEmployee()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="newEmployee.name" required>
+  
+      <label for="age">Age:</label>
+      <input type="number" id="age" [(ngModel)]="newEmployee.age" required>
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="newEmployee.email" required>
+  
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="tel" id="phoneNumber" [(ngModel)]="newEmployee.phoneNumber" required>
+  
+     
+      <label for="branch">Branch:</label>
+      <select id="branch" [(ngModel)]="newEmployee.branch">
+        <option *ngFor="let branch of branches" [value]="branch">{{ branch.name }}</option>
+      </select>
+  
+      <button type="submit">Add Employee</button>
+     
+      
+
+
+
+      
+    </form>
+    <button (click)="deleteemployee(employee.id)">Delete</button>
+  </div>
+  

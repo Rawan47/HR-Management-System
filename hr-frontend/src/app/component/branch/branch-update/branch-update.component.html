@@ -1,0 +1,36 @@
+
+<div>
+    <h2>Update Branch</h2>
+    <form [formGroup]="branchForm" (ngSubmit)="onSubmit()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name">
+  
+      <label for="building_number">Building Number:</label>
+      <input type="text" id="building_number" formControlName="building_number">
+  
+      <label for="street">Street:</label>
+      <input type="text" id="street" formControlName="street">
+  
+      <label for="area">Area:</label>
+      <input type="text" id="area" formControlName="area">
+  
+      <label for="city">City:</label>
+      <input type="text" id="city" formControlName="city">
+  
+      <label for="country">Country:</label>
+      <input type="text" id="country" formControlName="country">
+  
+     
+      <label for="manager">Manager:</label>
+      <select id="manager" formControlName="manager">
+       
+        <option value="" disabled>Select Manager</option>
+        <option *ngFor="let employee of employees" [value]="employee.id">
+          {{ employee.name }}
+        </option>
+      </select>
+  
+      <button type="submit">Update Branch</button>
+    </form>
+  </div>
+  

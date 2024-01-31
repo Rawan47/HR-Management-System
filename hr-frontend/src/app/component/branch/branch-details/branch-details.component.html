@@ -1,0 +1,19 @@
+
+<div class="container">
+    <h2>Branch Details - {{ branch.name }}</h2>
+    
+    <div class="branch-info">
+      <p><strong>Location:</strong> {{ branch.building_number }} {{ branch.street }}, {{ branch.area }}, {{ branch.city }}, {{ branch.country }}</p>
+      <p><strong>Manager:</strong> {{ branch.manager ? branch.manager : 'No Manager assigned' }}</p>
+     
+    </div>
+  
+    <h3>Employees</h3>
+    <ul>
+      <li *ngFor="let employee of branch.employees">
+        {{ employee.name }} - {{ employee.age }} years old - {{ employee.email }}
+       
+      </li>
+    </ul>
+  </div>
+  
